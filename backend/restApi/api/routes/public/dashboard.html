@@ -1,0 +1,164 @@
+<html>
+<header>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link rel="stylesheet" href="./res/css/dashboard-css.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+</header>
+
+<body>
+
+    <section id="sidebar"> 
+        <div class="white-label">
+        </div> 
+        <div id="sidebar-nav">   
+          <ul>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Stats</a></li>
+            <li class="active"><a href="#"><i class="fa fa-desktop"></i> Content</a></li>
+            <li><a href="#"><i class="fa fa-usd"></i> Participants</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Description</a></li>
+          </ul>
+        </div>
+  </section>
+  <section id="content">
+    <div id="header">
+      <div class="header-nav">
+        <div class="menu-button">
+          <!--<i class="fa fa-navicon"></i>-->
+        </div>
+        <div class="nav">
+          <ul>
+            <li class="nav-settings">
+              <div class="font-icon"><i class="fa fa-tasks"></i></div>
+            </li>
+            <li class="nav-mail">
+              <div class="font-icon"><i class="fa fa-envelope-o"></i></div>
+            </li>
+            <li class="nav-calendar">
+              <div class="font-icon"><i class="fa fa-calendar"></i></div>
+            </li>
+            <li class="nav-chat">
+              <div class="font-icon"><i class="fa fa-comments-o"></i></div>
+            </li>
+            <li class="nav-profile">
+              <div class="nav-profile-image">
+                <img src="https://skynet.marketecture.com/user_avatars/258800/Hayley-Helsten.jpg" alt="profile-img" alt="profile image">
+                <div class="nav-profile-name">Jane Smith<i class="fa fa-caret-down"></i></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <div class="content course-content-container">
+          <div class="content-left">
+              <h1>Add Content</h1>
+              <div class="post-header">
+                <div id="post-header-nav">   
+                  <ul>
+                    <li class="post-active" id="text-li"><a class="header-link" href="#" onclick="headerClicked(document.getElementById('header-text').innerHTML)"><i class="fa fa-comment-o"></i><span id="header-text">Text</span></a></li>
+                    <li class="post-deactive" id="link-li"><a class="header-link" href="#" onclick="headerClicked(document.getElementById('header-link').innerHTML)"><i class="fa fa-link"></i><span id="header-link">Link</span></a></li>
+                    <li class="post-deactive" id="image-li"><a class="header-link" href="#" onclick="headerClicked(document.getElementById('header-image').innerHTML)"><i class="fa fa-picture-o"></i><span id="header-image">Image</span></a></li>
+                    <li class="post-deactive" id="quiz-li"><a class="header-link" href="#" onclick="headerClicked(document.getElementById('header-quiz').innerHTML)"><i class="fa fa-question-circle-o"></i><span id="header-quiz">Quiz</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              
+                    <form id="text-form" class="cf" action="#">
+                        <div class="half left cf">
+                            <textarea class="text-field" name="textarea" style="width:565px;height:150px;" placeholder="Add Text"></textarea>
+                        </div>
+                        <div class="timediff">
+                            <div class="timediff-selection">
+                                <input class="time-field" type="text" id="minutes" value="00"/>
+                                <input class="time-field" type="text" id="hours" value="00"/>
+                                <input class="time-field" type="text" id="days" value="00"/>
+                                <input class="time-field" type="text" id="months" value="00"/>
+                            </div>
+                            <p>Select Time (after previous post) <i>Months:Days:Hours:Minutes</i></p>
+                        </div>
+                        <input type="submit" value="Submit" id="text-submit" class="input-submit" onclick="addCourse_submit(this)">
+                    </form>
+              
+              
+                    <form id="link-form" class="cf" action="#" hidden>
+                        <div class="half left cf">
+                            <input class="link-field" type="text" id="input-link" placeholder="Add Link"/>
+                        </div>
+                        <div class="timediff">
+                            <div class="timediff-selection">
+                                <input class="time-field" type="text" id="minutes" value="00"/>
+                                <input class="time-field" type="text" id="hours" value="00"/>
+                                <input class="time-field" type="text" id="days" value="00"/>
+                                <input class="time-field" type="text" id="months" value="00"/>
+                            </div>
+                            <p>Select Time (after previous post) <i>Months:Days:Hours:Minutes</i></p>
+                        </div>
+                        <input type="submit" value="Submit" id="link-submit" class="input-submit" onclick="addCourse_submit(this)">
+                    </form>
+              
+              
+                    <form id="image-form" class="cf" action="#" hidden>
+                        <div class="half left cf">
+                            <textarea class="text-field" name="textarea" style="width:565px;height:150px;" placeholder="Add Text"></textarea>
+                            <input class="image-field" type="text" id="input-desc" placeholder="Upload Image"/>
+                        </div>
+                        <div class="timediff">
+                            <div class="timediff-selection">
+                                <input class="time-field" type="text" id="minutes" value="00"/>
+                                <input class="time-field" type="text" id="hours" value="00"/>
+                                <input class="time-field" type="text" id="days" value="00"/>
+                                <input class="time-field" type="text" id="months" value="00"/>
+                            </div>
+                            <p>Select Time (after previous post) <i>Months:Days:Hours:Minutes</i></p>
+                        </div>
+                        <input type="submit" value="Submit" id="image-submit" class="input-submit" onclick="addCourse_submit(this)">
+                    </form>
+              
+              
+                    <form id="quiz-form" class="cf" action="#" hidden>
+                        <div class="half left cf">
+                            <input class="text-field" type="text" id="input-desc" placeholder="Heading"/>
+                            <input class="link-field" type="text" id="input-link" placeholder="Add Link"/>
+                            <input class="image-field" type="text" id="input-img" placeholder="Upload Image"/>
+                        </div>
+                        <div class="timediff">
+                            <div class="timediff-selection">
+                                <input class="time-field" type="text" id="minutes" value="00"/>
+                                <input class="time-field" type="text" id="hours" value="00"/>
+                                <input class="time-field" type="text" id="days" value="00"/>
+                                <input class="time-field" type="text" id="months" value="00"/>
+                            </div>
+                            <p>Select Time (after previous post) <i>Months:Days:Hours:Minutes</i></p>
+                        </div>
+                        <input type="submit" value="Submit" id="quiz-submit" class="input-submit" onclick="addCourse_submit(this)">
+                    </form>
+              
+              
+          </div>
+
+          <div class="content-right">
+            <div class="scrollable-content">
+                <div class="scrollable" id="scrollable-template">
+                    <div class="content-strip">
+                        <div class="num-container">
+                            <span id="content-num">1</span>
+                        </div>
+                        <div class="desc-container">
+                            <p class="content-desc">Risk management is the identification, assessment, and prioritization of risks (defined in ISO 31000 as the effect of uncertainty on objectives) followed by coordinated and economical application of resources to minimize, monitor, and control the probability and/or impact of unfortunate events[1] or to maximize the realization of opportunities. Risk management’s objective is to assure uncertainty does not deflect the endeavor from the business goals.[2]</p>
+                            <a class="content-link" href="https://en.wikipedia.org/wiki/Risk_management">https://en.wikipedia.org/wiki/Risk_management</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+      </div>
+  </section>
+    <script type="text/javascript" src="./res/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./res/js/dashboard-js.js"></script>
+</body>
+</html>

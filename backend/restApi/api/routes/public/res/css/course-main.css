@@ -1,0 +1,102 @@
+
+.body{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.header {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top:0;
+    height: 7%;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 50px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bot-name{
+    color: #ffffff;
+    position: fixed;
+    font-size: 25px;
+}
+.header-left{
+    background-color: #ff6e00;
+    width:150px;
+    padding: 0;
+    margin: 0;
+    height: 7%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border: none;
+}
+
+.header-right{
+    background-color: white;
+    width:450px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    float: right;
+    display: inline;
+}
+
+.user-info{
+    background-color: darkgrey;
+    width: 30%;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 70;
+}
+.user-info p{
+    
+    float: right;
+    display: inline;
+    text-align: center;
+    padding-top: 12px;
+    padding-right: 15px;
+}
+.header-menu{
+    display: inline;
+    position: absolute;
+    right: 30%;
+    width: 50%;
+    
+}
+
+.header-menu li{
+    list-style-type: none;
+    display: inline;
+    float: right;
+}
+
+.header-menu li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.header-menu li a:hover{
+    color: coral;
+}
+.content-container{  
+    width: 100%;
+    position: fixed;
+    top: 7%;
+    background-color:#ffffff;
+    padding: 0;
+    margin: 0;
+    border: none;
+    left: 0;
+    height: 93%;
+}
