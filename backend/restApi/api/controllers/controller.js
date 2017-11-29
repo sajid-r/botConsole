@@ -1,5 +1,6 @@
 'use strict';
 var tz=require('moment-timezone'),
+  json2csv = require('json2csv'),
   mongoose = require('mongoose'),
   Log = mongoose.model('chatlog'),
   moment = require('moment'),
@@ -616,6 +617,26 @@ exports.saveAggregatedDataToDb = function(req,res){
         res.json(newobj);
       });
     });
+}
+
+exports.csvdata = function(req,res){
+    Log.find({"localTimeStamp":{"$gte":new Date(moment(req.query.startdate).toISOString()),"$lte":new Date(moment(req.query.enddate).toISOString())}}, {"conversationId":1, "text":1, "localTimeStamp":1, "from":1, "inputHint":1, "userFeedback":1, _id:0}, function(err,item){
+            if(err)
+                res.send(err);
+            var naTypeQueries = []
+            for (var i=0; i<item.length; i++){
+                if(item[i].inputHint === 'noAnswerFound'){
+                    item[i-1].localTimeStamp = moment(JSON.parse(JSON.stringify(item))[i-1].localTimeStamp).tz('Asia/Kolkata').format('Do MMMM YYYY, h:mm:ss a')
+                    naTypeQueries.push(item[i-1])
+                }
+            }
+            var fields = ['localTimeStamp', 'text'];
+            var fieldNames = ['Time', 'Query'];
+            var data = json2csv({ data: naTypeQueries, fields: fields, fieldNames: fieldNames });
+
+            res.attachment('filename.csv');
+            res.status(200).send(data);
+        });
 }
 
 

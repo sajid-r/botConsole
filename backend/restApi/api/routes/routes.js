@@ -45,4 +45,7 @@ module.exports = function(app) {
   app.route('/invol/create').
   	post(controller.postInvol); //{"involvementno":10, "courseid":1,"userid":2}
 
+  app.route('/csvdata').
+    get(controller.csvdata);
+
 }
